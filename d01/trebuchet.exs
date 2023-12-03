@@ -33,3 +33,6 @@ defmodule Trebuchet do
     "#{num}#{String.last(word)}"
   end
 end
+
+IO.puts Trebuchet.part1()
+IO.puts Trebuchet.part2()
