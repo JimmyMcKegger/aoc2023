@@ -38,9 +38,9 @@ defmodule BoatRace do
     find_winners(t, results)
   end
 
-  defp win_race({time, current_record_distance}) do
-    for hold_time <- 0..time,
-        distance = hold_time * (time - hold_time),
+  defp win_race({total_time, current_record_distance}) do
+    for hold_time <- 0..total_time,
+        distance = hold_time * (total_time - hold_time),
         distance > current_record_distance,
         do: {hold_time, distance}
   end
@@ -65,5 +65,5 @@ defmodule BoatRace do
       |> Enum.map(&List.flatten/1)
 end
 
-IO.inspect(BoatRace.part1(), label: "Part 1")
-IO.inspect(BoatRace.part2(), label: "Part 2")
+IO.puts BoatRace.part1
+IO.puts BoatRace.part2
